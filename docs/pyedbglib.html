@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>pyedbglib &#8212; pyedbglib  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/microchip.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pyedbglib.hidtransport" href="pyedbglib.hidtransport.html" />
+    <link rel="prev" title="pyedbglib documentation" href="index.html" /> 
+  </head><body>
+    <header>
+        <div class="logo">
+            <a href="https://microchip.com" target="_blank">
+                <img src="_static/microchip.png" />
+            </a>
+        </div>
+    </header>
+
+    <div class="related-wrapper">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pyedbglib.hidtransport.html" title="pyedbglib.hidtransport"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="pyedbglib documentation"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pyedbglib  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pyedbglib</a></li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="document">
+        
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">pyedbglib</a><ul>
+<li><a class="reference internal" href="#module-pyedbglib.pyedbglib_errors">pyedbglib.pyedbglib_errors</a><ul>
+<li><a class="reference internal" href="#python-edbg-protocol-communication-library">Python EDBG protocol communication library</a></li>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#library-usage">Library usage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="index.html"
+                          title="previous chapter">pyedbglib documentation</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="pyedbglib.hidtransport.html"
+                          title="next chapter">pyedbglib.hidtransport</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pyedbglib.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+        <div class="documentwrapper">
+            <div class="bodywrapper">
+                <div class="body" role="main">
+                    
+  <section id="pyedbglib">
+<h1>pyedbglib<a class="headerlink" href="#pyedbglib" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pyedbglib.hidtransport.html">pyedbglib.hidtransport</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pyedbglib.hidtransport.html#module-pyedbglib.hidtransport.cyhidapi">pyedbglib.hidtransport.cyhidapi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyedbglib.hidtransport.html#module-pyedbglib.hidtransport.hidtransportbase">pyedbglib.hidtransport.hidtransportbase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyedbglib.hidtransport.html#module-pyedbglib.hidtransport.hidtransportfactory">pyedbglib.hidtransport.hidtransportfactory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyedbglib.hidtransport.html#module-pyedbglib.hidtransport.toolinfo">pyedbglib.hidtransport.toolinfo</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pyedbglib.mplabtransport.html">pyedbglib.mplabtransport</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pyedbglib.mplabtransport.html#module-pyedbglib.mplabtransport.mplabtransport">pyedbglib.mplabtransport.mplabtransport</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pyedbglib.primitive.html">pyedbglib.primitive</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pyedbglib.primitive.html#module-pyedbglib.primitive.gen4controller">pyedbglib.primitive.gen4controller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyedbglib.primitive.html#module-pyedbglib.primitive.primitivecontroller">pyedbglib.primitive.primitivecontroller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyedbglib.primitive.html#module-pyedbglib.primitive.primitives">pyedbglib.primitive.primitives</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pyedbglib.protocols.html">pyedbglib.protocols</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pyedbglib.protocols.html#module-pyedbglib.protocols.ati">pyedbglib.protocols.ati</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyedbglib.protocols.html#module-pyedbglib.protocols.avr32protocol">pyedbglib.protocols.avr32protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyedbglib.protocols.html#module-pyedbglib.protocols.avr32protocolerrors">pyedbglib.protocols.avr32protocolerrors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyedbglib.protocols.html#module-pyedbglib.protocols.avr8protocol">pyedbglib.protocols.avr8protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyedbglib.protocols.html#module-pyedbglib.protocols.avr8protocolerrors">pyedbglib.protocols.avr8protocolerrors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyedbglib.protocols.html#module-pyedbglib.protocols.avrcmsisdap">pyedbglib.protocols.avrcmsisdap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyedbglib.protocols.html#module-pyedbglib.protocols.avrispprotocol">pyedbglib.protocols.avrispprotocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyedbglib.protocols.html#module-pyedbglib.protocols.cmsisdap">pyedbglib.protocols.cmsisdap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyedbglib.protocols.html#module-pyedbglib.protocols.configprotocol">pyedbglib.protocols.configprotocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyedbglib.protocols.html#module-pyedbglib.protocols.dapcommand">pyedbglib.protocols.dapcommand</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyedbglib.protocols.html#module-pyedbglib.protocols.dapwrapper">pyedbglib.protocols.dapwrapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyedbglib.protocols.html#module-pyedbglib.protocols.edbgprotocol">pyedbglib.protocols.edbgprotocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyedbglib.protocols.html#module-pyedbglib.protocols.housekeepingprotocol">pyedbglib.protocols.housekeepingprotocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyedbglib.protocols.html#module-pyedbglib.protocols.jtagice3protocol">pyedbglib.protocols.jtagice3protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyedbglib.protocols.html#module-pyedbglib.protocols.selftestprotocol">pyedbglib.protocols.selftestprotocol</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pyedbglib.serialport.html">pyedbglib.serialport</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pyedbglib.serialport.html#module-pyedbglib.serialport.serialcdc">pyedbglib.serialport.serialcdc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyedbglib.serialport.html#module-pyedbglib.serialport.serialportcheck">pyedbglib.serialport.serialportcheck</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyedbglib.serialport.html#module-pyedbglib.serialport.serialportmap">pyedbglib.serialport.serialportmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyedbglib.serialport.html#module-pyedbglib.serialport.wincdc">pyedbglib.serialport.wincdc</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pyedbglib.util.html">pyedbglib.util</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pyedbglib.util.html#module-pyedbglib.util.binary">pyedbglib.util.binary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyedbglib.util.html#module-pyedbglib.util.chopper">pyedbglib.util.chopper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyedbglib.util.html#module-pyedbglib.util.print_helpers">pyedbglib.util.print_helpers</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="module-pyedbglib.pyedbglib_errors">
+<span id="pyedbglib-pyedbglib-errors"></span><h2>pyedbglib.pyedbglib_errors<a class="headerlink" href="#module-pyedbglib.pyedbglib_errors" title="Permalink to this headline">¶</a></h2>
+<p>pyedbglib specific exceptions</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="pyedbglib.pyedbglib_errors.PyedbglibError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyedbglib.pyedbglib_errors.</span></span><span class="sig-name descname"><span class="pre">PyedbglibError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyedbglib.pyedbglib_errors.PyedbglibError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Base class for all pyedbglib specific exceptions</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="pyedbglib.pyedbglib_errors.PyedbglibHidError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyedbglib.pyedbglib_errors.</span></span><span class="sig-name descname"><span class="pre">PyedbglibHidError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyedbglib.pyedbglib_errors.PyedbglibHidError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyedbglib.pyedbglib_errors.PyedbglibError" title="pyedbglib.pyedbglib_errors.PyedbglibError"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyedbglib.pyedbglib_errors.PyedbglibError</span></code></a></p>
+<p>Error from the HID transport layer</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="pyedbglib.pyedbglib_errors.PyedbglibNotSupportedError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyedbglib.pyedbglib_errors.</span></span><span class="sig-name descname"><span class="pre">PyedbglibNotSupportedError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyedbglib.pyedbglib_errors.PyedbglibNotSupportedError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyedbglib.pyedbglib_errors.PyedbglibError" title="pyedbglib.pyedbglib_errors.PyedbglibError"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyedbglib.pyedbglib_errors.PyedbglibError</span></code></a></p>
+<p>Signals that an attempted operation is not supported</p>
+</dd></dl>
+
+<span class="target" id="module-pyedbglib"></span><section id="python-edbg-protocol-communication-library">
+<h3>Python EDBG protocol communication library<a class="headerlink" href="#python-edbg-protocol-communication-library" title="Permalink to this headline">¶</a></h3>
+<p>pyedbglib is a low-level protocol library for communicating with
+Microchip CMSIS-DAP based debuggers.</p>
+</section>
+<section id="overview">
+<h3>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>pyedbglib is available:</dt><dd><ul class="simple">
+<li><p>install using pip from pypi: <a class="reference external" href="https://pypi.org/project/pyedbglib">https://pypi.org/project/pyedbglib</a></p></li>
+<li><p>browse source code on github: <a class="reference external" href="https://github.com/microchip-pic-avr-tools/pyedbglib">https://github.com/microchip-pic-avr-tools/pyedbglib</a></p></li>
+<li><p>read API documentation on github: <a class="reference external" href="https://microchip-pic-avr-tools.github.io/pyedbglib">https://microchip-pic-avr-tools.github.io/pyedbglib</a></p></li>
+<li><p>read the changelog on github: <a class="reference external" href="https://github.com/microchip-pic-avr-tools/pyedbglib/blob/main/CHANGELOG.md">https://github.com/microchip-pic-avr-tools/pyedbglib/blob/main/CHANGELOG.md</a></p></li>
+</ul>
+</dd>
+</dl>
+<p>pyedbglib uses hidapi package with a USB-level driver such as libusb.</p>
+</section>
+<section id="library-usage">
+<h3>Library usage<a class="headerlink" href="#library-usage" title="Permalink to this headline">¶</a></h3>
+<p>The protocol library has no application usage on its own, but provides
+USB-protocol-level tool drivers to applications such as pymcuprog.
+In general a two-stage stack implementation is required for using pyedbglib:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Create transport HID layer</p></li>
+<li><p>Create protocol implementation using this transport layer</p></li>
+</ol>
+</div></blockquote>
+<p>All protocols implemented in the library generally take the transport layer
+as a parameter to their constructors.</p>
+<p>To use pyedbglib as a library for applications, the following usage patterns
+can be used:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import and instantiate transport object:</span>
+<span class="kn">from</span> <span class="nn">pyedbglib.hidtransport.hidtransportfactory</span> <span class="kn">import</span> <span class="n">hid_transport</span>
+<span class="n">transport</span> <span class="o">=</span> <span class="n">hid_transport</span><span class="p">()</span>
+
+<span class="c1"># Connect to any PKOB nano (nEDBG) tool.  Serial number and product are optional, but must</span>
+<span class="c1"># be provided if more than one matching unit is connected:</span>
+<span class="n">status</span> <span class="o">=</span> <span class="n">transport</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">serial_number</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">product</span><span class="o">=</span><span class="s2">&quot;nedbg&quot;</span><span class="p">)</span>
+
+<span class="c1"># Example of application using housekeeping protocol to read out the target voltage:</span>
+<span class="kn">from</span> <span class="nn">pyedbglib.protocols.housekeepingprotocol</span> <span class="kn">import</span> <span class="n">Jtagice3HousekeepingProtocol</span>
+<span class="n">housekeeper</span> <span class="o">=</span> <span class="n">Jtagice3HousekeepingProtocol</span><span class="p">(</span><span class="n">transport</span><span class="p">)</span>
+<span class="n">housekeeper</span><span class="o">.</span><span class="n">start_session</span><span class="p">()</span>
+<span class="n">voltage</span> <span class="o">=</span> <span class="n">housekeeper</span><span class="o">.</span><span class="n">get_le16</span><span class="p">(</span><span class="n">Jtagice3HousekeepingProtocol</span><span class="o">.</span><span class="n">HOUSEKEEPING_CONTEXT_ANALOG</span><span class="p">,</span>
+                               <span class="n">Jtagice3HousekeepingProtocol</span><span class="o">.</span><span class="n">HOUSEKEEPING_ANALOG_VTREF</span><span class="p">)</span>
+<span class="n">voltage</span> <span class="o">=</span> <span class="n">voltage</span> <span class="o">/</span> <span class="mf">1000.0</span>
+<span class="n">housekeeper</span><span class="o">.</span><span class="n">end_session</span><span class="p">()</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Target is running at </span><span class="si">{0:.02f}</span><span class="s2">V&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">voltage</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-wrapper">
+        <div class="footer" role="contentinfo">
+            © Copyright 2021, Microchip Technology Inc
+        </div>
+    </div>
+  </body>
+</html>
