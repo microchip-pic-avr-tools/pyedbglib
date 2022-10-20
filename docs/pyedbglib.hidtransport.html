@@ -1,0 +1,502 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>pyedbglib.hidtransport &#8212; pyedbglib  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/microchip.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pyedbglib.mplabtransport" href="pyedbglib.mplabtransport.html" />
+    <link rel="prev" title="pyedbglib" href="pyedbglib.html" /> 
+  </head><body>
+    <header>
+        <div class="logo">
+            <a href="https://microchip.com" target="_blank">
+                <img src="_static/microchip.png" />
+            </a>
+        </div>
+    </header>
+
+    <div class="related-wrapper">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pyedbglib.mplabtransport.html" title="pyedbglib.mplabtransport"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pyedbglib.html" title="pyedbglib"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pyedbglib  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pyedbglib.html" accesskey="U">pyedbglib</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pyedbglib.hidtransport</a></li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="document">
+        
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">pyedbglib.hidtransport</a><ul>
+<li><a class="reference internal" href="#module-pyedbglib.hidtransport.cyhidapi">pyedbglib.hidtransport.cyhidapi</a><ul>
+<li><a class="reference internal" href="#pyedbglib.hidtransport.cyhidapi.CyHidApiTransport"><code class="docutils literal notranslate"><span class="pre">CyHidApiTransport</span></code></a><ul>
+<li><a class="reference internal" href="#pyedbglib.hidtransport.cyhidapi.CyHidApiTransport.detect_devices"><code class="docutils literal notranslate"><span class="pre">CyHidApiTransport.detect_devices()</span></code></a></li>
+<li><a class="reference internal" href="#pyedbglib.hidtransport.cyhidapi.CyHidApiTransport.hid_connect"><code class="docutils literal notranslate"><span class="pre">CyHidApiTransport.hid_connect()</span></code></a></li>
+<li><a class="reference internal" href="#pyedbglib.hidtransport.cyhidapi.CyHidApiTransport.hid_disconnect"><code class="docutils literal notranslate"><span class="pre">CyHidApiTransport.hid_disconnect()</span></code></a></li>
+<li><a class="reference internal" href="#pyedbglib.hidtransport.cyhidapi.CyHidApiTransport.hid_info"><code class="docutils literal notranslate"><span class="pre">CyHidApiTransport.hid_info()</span></code></a></li>
+<li><a class="reference internal" href="#pyedbglib.hidtransport.cyhidapi.CyHidApiTransport.hid_read"><code class="docutils literal notranslate"><span class="pre">CyHidApiTransport.hid_read()</span></code></a></li>
+<li><a class="reference internal" href="#pyedbglib.hidtransport.cyhidapi.CyHidApiTransport.hid_transfer"><code class="docutils literal notranslate"><span class="pre">CyHidApiTransport.hid_transfer()</span></code></a></li>
+<li><a class="reference internal" href="#pyedbglib.hidtransport.cyhidapi.CyHidApiTransport.hid_write"><code class="docutils literal notranslate"><span class="pre">CyHidApiTransport.hid_write()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-pyedbglib.hidtransport.hidtransportbase">pyedbglib.hidtransport.hidtransportbase</a><ul>
+<li><a class="reference internal" href="#pyedbglib.hidtransport.hidtransportbase.HidTool"><code class="docutils literal notranslate"><span class="pre">HidTool</span></code></a><ul>
+<li><a class="reference internal" href="#pyedbglib.hidtransport.hidtransportbase.HidTool.set_packet_size"><code class="docutils literal notranslate"><span class="pre">HidTool.set_packet_size()</span></code></a></li>
+<li><a class="reference internal" href="#pyedbglib.hidtransport.hidtransportbase.HidTool.set_product_string"><code class="docutils literal notranslate"><span class="pre">HidTool.set_product_string()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pyedbglib.hidtransport.hidtransportbase.HidTransportBase"><code class="docutils literal notranslate"><span class="pre">HidTransportBase</span></code></a><ul>
+<li><a class="reference internal" href="#pyedbglib.hidtransport.hidtransportbase.HidTransportBase.connect"><code class="docutils literal notranslate"><span class="pre">HidTransportBase.connect()</span></code></a></li>
+<li><a class="reference internal" href="#pyedbglib.hidtransport.hidtransportbase.HidTransportBase.detect_devices"><code class="docutils literal notranslate"><span class="pre">HidTransportBase.detect_devices()</span></code></a></li>
+<li><a class="reference internal" href="#pyedbglib.hidtransport.hidtransportbase.HidTransportBase.disconnect"><code class="docutils literal notranslate"><span class="pre">HidTransportBase.disconnect()</span></code></a></li>
+<li><a class="reference internal" href="#pyedbglib.hidtransport.hidtransportbase.HidTransportBase.get_matching_tools"><code class="docutils literal notranslate"><span class="pre">HidTransportBase.get_matching_tools()</span></code></a></li>
+<li><a class="reference internal" href="#pyedbglib.hidtransport.hidtransportbase.HidTransportBase.get_report_size"><code class="docutils literal notranslate"><span class="pre">HidTransportBase.get_report_size()</span></code></a></li>
+<li><a class="reference internal" href="#pyedbglib.hidtransport.hidtransportbase.HidTransportBase.hid_connect"><code class="docutils literal notranslate"><span class="pre">HidTransportBase.hid_connect()</span></code></a></li>
+<li><a class="reference internal" href="#pyedbglib.hidtransport.hidtransportbase.HidTransportBase.hid_disconnect"><code class="docutils literal notranslate"><span class="pre">HidTransportBase.hid_disconnect()</span></code></a></li>
+<li><a class="reference internal" href="#pyedbglib.hidtransport.hidtransportbase.HidTransportBase.hid_info"><code class="docutils literal notranslate"><span class="pre">HidTransportBase.hid_info()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-pyedbglib.hidtransport.hidtransportfactory">pyedbglib.hidtransport.hidtransportfactory</a><ul>
+<li><a class="reference internal" href="#pyedbglib.hidtransport.hidtransportfactory.hid_transport"><code class="docutils literal notranslate"><span class="pre">hid_transport()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-pyedbglib.hidtransport.toolinfo">pyedbglib.hidtransport.toolinfo</a><ul>
+<li><a class="reference internal" href="#pyedbglib.hidtransport.toolinfo.TOOL_SHORTNAME_TO_USB_PRODUCT_STRING"><code class="docutils literal notranslate"><span class="pre">TOOL_SHORTNAME_TO_USB_PRODUCT_STRING</span></code></a></li>
+<li><a class="reference internal" href="#pyedbglib.hidtransport.toolinfo.adjust_hid_packet_size"><code class="docutils literal notranslate"><span class="pre">adjust_hid_packet_size()</span></code></a></li>
+<li><a class="reference internal" href="#pyedbglib.hidtransport.toolinfo.detect_hid_packet_size"><code class="docutils literal notranslate"><span class="pre">detect_hid_packet_size()</span></code></a></li>
+<li><a class="reference internal" href="#pyedbglib.hidtransport.toolinfo.get_default_report_size"><code class="docutils literal notranslate"><span class="pre">get_default_report_size()</span></code></a></li>
+<li><a class="reference internal" href="#pyedbglib.hidtransport.toolinfo.tool_shortname_to_product_string_name"><code class="docutils literal notranslate"><span class="pre">tool_shortname_to_product_string_name()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="pyedbglib.html"
+                          title="previous chapter">pyedbglib</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="pyedbglib.mplabtransport.html"
+                          title="next chapter">pyedbglib.mplabtransport</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pyedbglib.hidtransport.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+        <div class="documentwrapper">
+            <div class="bodywrapper">
+                <div class="body" role="main">
+                    
+  <section id="pyedbglib-hidtransport">
+<h1>pyedbglib.hidtransport<a class="headerlink" href="#pyedbglib-hidtransport" title="Permalink to this heading">¶</a></h1>
+<section id="module-pyedbglib.hidtransport.cyhidapi">
+<span id="pyedbglib-hidtransport-cyhidapi"></span><h2>pyedbglib.hidtransport.cyhidapi<a class="headerlink" href="#module-pyedbglib.hidtransport.cyhidapi" title="Permalink to this heading">¶</a></h2>
+<p>HID transport layer based on Cython and Hidapi</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyedbglib.hidtransport.cyhidapi.CyHidApiTransport">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyedbglib.hidtransport.cyhidapi.</span></span><span class="sig-name descname"><span class="pre">CyHidApiTransport</span></span><a class="headerlink" href="#pyedbglib.hidtransport.cyhidapi.CyHidApiTransport" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyedbglib.hidtransport.hidtransportbase.HidTransportBase" title="pyedbglib.hidtransport.hidtransportbase.HidTransportBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">HidTransportBase</span></code></a></p>
+<p>Implements all Cython / HIDAPI transport methods</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyedbglib.hidtransport.cyhidapi.CyHidApiTransport.detect_devices">
+<span class="sig-name descname"><span class="pre">detect_devices</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyedbglib.hidtransport.cyhidapi.CyHidApiTransport.detect_devices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Detect connected CMSIS-DAP devices, populating an internal list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>number of devices connected</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyedbglib.hidtransport.cyhidapi.CyHidApiTransport.hid_connect">
+<span class="sig-name descname"><span class="pre">hid_connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyedbglib.hidtransport.cyhidapi.CyHidApiTransport.hid_connect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make a HID connection to the debugger</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>device</strong> – USB device to connect to</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyedbglib.hidtransport.cyhidapi.CyHidApiTransport.hid_disconnect">
+<span class="sig-name descname"><span class="pre">hid_disconnect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyedbglib.hidtransport.cyhidapi.CyHidApiTransport.hid_disconnect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disconnect from HID</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyedbglib.hidtransport.cyhidapi.CyHidApiTransport.hid_info">
+<span class="sig-name descname"><span class="pre">hid_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyedbglib.hidtransport.cyhidapi.CyHidApiTransport.hid_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve USB descriptor information</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyedbglib.hidtransport.cyhidapi.CyHidApiTransport.hid_read">
+<span class="sig-name descname"><span class="pre">hid_read</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyedbglib.hidtransport.cyhidapi.CyHidApiTransport.hid_read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads HID data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>data read</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyedbglib.hidtransport.cyhidapi.CyHidApiTransport.hid_transfer">
+<span class="sig-name descname"><span class="pre">hid_transfer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_send</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyedbglib.hidtransport.cyhidapi.CyHidApiTransport.hid_transfer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends HID data and receives response</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data_send</strong> – </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyedbglib.hidtransport.cyhidapi.CyHidApiTransport.hid_write">
+<span class="sig-name descname"><span class="pre">hid_write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_send</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyedbglib.hidtransport.cyhidapi.CyHidApiTransport.hid_write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends HID data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data_send</strong> – data to send</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>number of bytes sent</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pyedbglib.hidtransport.hidtransportbase">
+<span id="pyedbglib-hidtransport-hidtransportbase"></span><h2>pyedbglib.hidtransport.hidtransportbase<a class="headerlink" href="#module-pyedbglib.hidtransport.hidtransportbase" title="Permalink to this heading">¶</a></h2>
+<p>Base class for all HID transport mechanisms.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyedbglib.hidtransport.hidtransportbase.HidTool">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyedbglib.hidtransport.hidtransportbase.</span></span><span class="sig-name descname"><span class="pre">HidTool</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vendor_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">product_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">serial_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">product_string</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">manufacturer_string</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyedbglib.hidtransport.hidtransportbase.HidTool" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Holds transport and DAP properties of a CMSIS-DAP debugger.</p>
+<p>Used to select the debugger to use if multiple debuggers are connected.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyedbglib.hidtransport.hidtransportbase.HidTool.set_packet_size">
+<span class="sig-name descname"><span class="pre">set_packet_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">packet_size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyedbglib.hidtransport.hidtransportbase.HidTool.set_packet_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the packet size</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>packet_size</strong> – bytes per packet</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyedbglib.hidtransport.hidtransportbase.HidTool.set_product_string">
+<span class="sig-name descname"><span class="pre">set_product_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">product_string</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyedbglib.hidtransport.hidtransportbase.HidTool.set_product_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the product string</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>product_string</strong> – product name string</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pyedbglib.hidtransport.hidtransportbase.HidTransportBase">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyedbglib.hidtransport.hidtransportbase.</span></span><span class="sig-name descname"><span class="pre">HidTransportBase</span></span><a class="headerlink" href="#pyedbglib.hidtransport.hidtransportbase.HidTransportBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Base class for HID transports</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyedbglib.hidtransport.hidtransportbase.HidTransportBase.connect">
+<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">serial_number</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">product</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyedbglib.hidtransport.hidtransportbase.HidTransportBase.connect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Makes a HID connection to a debugger</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serial_number</strong> – instance serial number to connect to</p></li>
+<li><p><strong>product</strong> – product type to connect to</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if successfully connected to a tool, False if not</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyedbglib.hidtransport.hidtransportbase.HidTransportBase.detect_devices">
+<span class="sig-name descname"><span class="pre">detect_devices</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyedbglib.hidtransport.hidtransportbase.HidTransportBase.detect_devices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Raise error as this method needs to be overridden.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyedbglib.hidtransport.hidtransportbase.HidTransportBase.disconnect">
+<span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyedbglib.hidtransport.hidtransportbase.HidTransportBase.disconnect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Release the HID connection</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyedbglib.hidtransport.hidtransportbase.HidTransportBase.get_matching_tools">
+<span class="sig-name descname"><span class="pre">get_matching_tools</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">serial_number_substring</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">product</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyedbglib.hidtransport.hidtransportbase.HidTransportBase.get_matching_tools" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of tools matching the given serial_number_substring and product.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serial_number_substring</strong> – <p>can be an empty string or a subset of a serial number. Not case sensitive
+This function will do matching of the last part of the devices serial numbers to
+the serial_number_substring. Examples:</p>
+<ul>
+<li><p>’123’ will match “MCHP3252000000043123” but not “MCP32520001230000000”</p></li>
+<li><p>’’ will match any serial number</p></li>
+</ul>
+</p></li>
+<li><p><strong>product</strong> – product type to connect to. If None any tool matching the serial_number_substring
+will be returned</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of matching tools</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyedbglib.hidtransport.hidtransportbase.HidTransportBase.get_report_size">
+<span class="sig-name descname"><span class="pre">get_report_size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyedbglib.hidtransport.hidtransportbase.HidTransportBase.get_report_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the packet size in bytes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bytes per packet/report</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyedbglib.hidtransport.hidtransportbase.HidTransportBase.hid_connect">
+<span class="sig-name descname"><span class="pre">hid_connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyedbglib.hidtransport.hidtransportbase.HidTransportBase.hid_connect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Raise error as this method needs to be overridden.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyedbglib.hidtransport.hidtransportbase.HidTransportBase.hid_disconnect">
+<span class="sig-name descname"><span class="pre">hid_disconnect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyedbglib.hidtransport.hidtransportbase.HidTransportBase.hid_disconnect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Raise error as this method needs to be overridden.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyedbglib.hidtransport.hidtransportbase.HidTransportBase.hid_info">
+<span class="sig-name descname"><span class="pre">hid_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyedbglib.hidtransport.hidtransportbase.HidTransportBase.hid_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Raise error as this method needs to be overridden.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pyedbglib.hidtransport.hidtransportfactory">
+<span id="pyedbglib-hidtransport-hidtransportfactory"></span><h2>pyedbglib.hidtransport.hidtransportfactory<a class="headerlink" href="#module-pyedbglib.hidtransport.hidtransportfactory" title="Permalink to this heading">¶</a></h2>
+<p>Factory for HID transport connections.</p>
+<p>Currently supports only Cython/HIDAPI</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyedbglib.hidtransport.hidtransportfactory.hid_transport">
+<span class="sig-prename descclassname"><span class="pre">pyedbglib.hidtransport.hidtransportfactory.</span></span><span class="sig-name descname"><span class="pre">hid_transport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">library</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'hidapi'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyedbglib.hidtransport.hidtransportfactory.hid_transport" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dispatch a transport layer for the OS in question</p>
+<p>The transport layer is typically used to connect to a tool and then it is passed in as a parameter when creating
+protocol objects.  An example where the transport layer is used to create an instance of the housekeepingprotocol
+for communication with the PKOB nano (nEDBG) debugger:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyedbglib.hidtransport.hidtransportfactory</span> <span class="kn">import</span> <span class="n">hid_transport</span>
+<span class="n">transport</span> <span class="o">=</span> <span class="n">hid_transport</span><span class="p">()</span>
+<span class="n">connect_status</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">connect_status</span> <span class="o">=</span> <span class="n">transport</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">serial_number</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">product</span><span class="o">=</span><span class="s1">&#39;nedbg&#39;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Unable to connect to USB device (</span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">error</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">connect_status</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Unable to connect to USB device&quot;</span><span class="p">)</span>
+
+<span class="n">housekeeper</span> <span class="o">=</span> <span class="n">housekeepingprotocol</span><span class="o">.</span><span class="n">Jtagice3HousekeepingProtocol</span><span class="p">(</span><span class="n">transport</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>library</strong> (<em>string</em>) – Transport library to use, currently only ‘hidapi’ is supported which will use the libusb hidapi</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Instance of transport layer object</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>class:cyhidapi:CyHidApiTransport</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="pyedbglib.html#pyedbglib.pyedbglib_errors.PyedbglibNotSupportedError" title="pyedbglib.pyedbglib_errors.PyedbglibNotSupportedError"><strong>PyedbglibNotSupportedError</strong></a> – if library specified is not supported</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-pyedbglib.hidtransport.toolinfo">
+<span id="pyedbglib-hidtransport-toolinfo"></span><h2>pyedbglib.hidtransport.toolinfo<a class="headerlink" href="#module-pyedbglib.hidtransport.toolinfo" title="Permalink to this heading">¶</a></h2>
+<p>Gathering of all known Microchip CMSIS-DAP debuggers and default EP sizes</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="pyedbglib.hidtransport.toolinfo.TOOL_SHORTNAME_TO_USB_PRODUCT_STRING">
+<span class="sig-prename descclassname"><span class="pre">pyedbglib.hidtransport.toolinfo.</span></span><span class="sig-name descname"><span class="pre">TOOL_SHORTNAME_TO_USB_PRODUCT_STRING</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'atmelice':</span> <span class="pre">'Atmel-ICE',</span> <span class="pre">'edbg':</span> <span class="pre">'EDBG',</span> <span class="pre">'icd4':</span> <span class="pre">'MPLAB</span> <span class="pre">ICD</span> <span class="pre">4',</span> <span class="pre">'ice4':</span> <span class="pre">'MPLAB</span> <span class="pre">ICE</span> <span class="pre">4',</span> <span class="pre">'jtagice3':</span> <span class="pre">'JTAGICE3',</span> <span class="pre">'medbg':</span> <span class="pre">'mEDBG',</span> <span class="pre">'nedbg':</span> <span class="pre">'nEDBG',</span> <span class="pre">'pickit4':</span> <span class="pre">'MPLAB</span> <span class="pre">PICkit</span> <span class="pre">4',</span> <span class="pre">'powerdebugger':</span> <span class="pre">'Power</span> <span class="pre">Debugger',</span> <span class="pre">'snap':</span> <span class="pre">'MPLAB</span> <span class="pre">Snap'}</span></em><a class="headerlink" href="#pyedbglib.hidtransport.toolinfo.TOOL_SHORTNAME_TO_USB_PRODUCT_STRING" title="Permalink to this definition">¶</a></dt>
+<dd><p>Some Atmel/Microchip ‘3G’ tools (EDBG, Atmel-ICE, PowerDebugger) have ‘dual configuration’ HID interfaces.
+The ‘default’ configuration has a 512-byte HID report size, while the ‘strict’ and ‘minimal’ configurations both
+have 64-byte report size.  The switching mechanism is not implemented in a USB-standard way; it is managed using
+atprogram.exe (part of Microchip Studio 7) and the configuration is persistent in the tool.</p>
+<dl class="simple">
+<dt>The configuration currently in use can be determined by:</dt><dd><p>atprogram.exe parameters –get-ep-size</p>
+</dd>
+<dt>and the configuration can be altered by:</dt><dd><p>atprogram.exe parameters –set-ep-size [default|strict|minimal]</p>
+</dd>
+<dt>On Linux and Mac the configuration can be detected using usb.core, see:</dt><dd><p>def detect_hid_packet_size(product_id, serial_number):</p>
+</dd>
+<dt>On Windows the configuration is adjusted after connecting, see:</dt><dd><p>def adjust_hid_packet_size(transport, device):</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyedbglib.hidtransport.toolinfo.adjust_hid_packet_size">
+<span class="sig-prename descclassname"><span class="pre">pyedbglib.hidtransport.toolinfo.</span></span><span class="sig-name descname"><span class="pre">adjust_hid_packet_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transport</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyedbglib.hidtransport.toolinfo.adjust_hid_packet_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Active HIDAPI based HID packet size detection and adjustment</p>
+<p>Detecting report size using the descriptor before connecting is not simple on Windows.  Instead an active detection
+is done after connecting by sending a small packet to ask the tool for its frame size.  This query frame is small
+enough to succeed on both 64- and 512-byte variants, and an adjustment can be made after detection since HIDAPI on
+Windows is tolerant to EP-size mismatches.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>transport</strong> – HID transport object, already connected</p></li>
+<li><p><strong>device</strong> – device currently connected.  Size is adjusted before returning</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyedbglib.hidtransport.toolinfo.detect_hid_packet_size">
+<span class="sig-prename descclassname"><span class="pre">pyedbglib.hidtransport.toolinfo.</span></span><span class="sig-name descname"><span class="pre">detect_hid_packet_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">product_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">serial_number</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyedbglib.hidtransport.toolinfo.detect_hid_packet_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>pyUSB based HID packet size detection</p>
+<p>On Linux and Mac the configuration in use can easily be determined by inspecting the descriptor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>product_id</strong> – USB PID to look for</p></li>
+<li><p><strong>serial_number</strong> – USB serial number to match</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>detected report size, or 0 if no match is found</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyedbglib.hidtransport.toolinfo.get_default_report_size">
+<span class="sig-prename descclassname"><span class="pre">pyedbglib.hidtransport.toolinfo.</span></span><span class="sig-name descname"><span class="pre">get_default_report_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pid</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyedbglib.hidtransport.toolinfo.get_default_report_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve default EP report size based on known PIDs</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>pid</strong> – product ID</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>packet size</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyedbglib.hidtransport.toolinfo.tool_shortname_to_product_string_name">
+<span class="sig-prename descclassname"><span class="pre">pyedbglib.hidtransport.toolinfo.</span></span><span class="sig-name descname"><span class="pre">tool_shortname_to_product_string_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shortname</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyedbglib.hidtransport.toolinfo.tool_shortname_to_product_string_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mapping for common short names of tools to product string name</p>
+<p>The intention is that this function is always run on the tool name and that the conversion
+only happens if the name is a known shortname. If the shortname is not known of if the name
+provided is already a valid Product string name then the provided shortname parameter will
+just be returned unchanged. So if the name already is a correct Product string name it is
+still safe to run this conversion funtion on it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>shortname</strong> – shortname typically used by atbackend (powerdebugger, atmelice etc.)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>String to look for in USB product strings to identify the tool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="module-pyedbglib.hidtransport"></span></section>
+</section>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-wrapper">
+        <div class="footer" role="contentinfo">
+            © Copyright 2021, Microchip Technology Inc
+        </div>
+    </div>
+  </body>
+</html>

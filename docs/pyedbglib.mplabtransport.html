@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>pyedbglib.mplabtransport &#8212; pyedbglib  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/microchip.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pyedbglib.primitive" href="pyedbglib.primitive.html" />
+    <link rel="prev" title="pyedbglib.hidtransport" href="pyedbglib.hidtransport.html" /> 
+  </head><body>
+    <header>
+        <div class="logo">
+            <a href="https://microchip.com" target="_blank">
+                <img src="_static/microchip.png" />
+            </a>
+        </div>
+    </header>
+
+    <div class="related-wrapper">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pyedbglib.primitive.html" title="pyedbglib.primitive"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pyedbglib.hidtransport.html" title="pyedbglib.hidtransport"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pyedbglib  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pyedbglib.html" accesskey="U">pyedbglib</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pyedbglib.mplabtransport</a></li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="document">
+        
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">pyedbglib.mplabtransport</a><ul>
+<li><a class="reference internal" href="#module-pyedbglib.mplabtransport.mplabtransport">pyedbglib.mplabtransport.mplabtransport</a><ul>
+<li><a class="reference internal" href="#pyedbglib.mplabtransport.mplabtransport.MpLabTransport"><code class="docutils literal notranslate"><span class="pre">MpLabTransport</span></code></a><ul>
+<li><a class="reference internal" href="#pyedbglib.mplabtransport.mplabtransport.MpLabTransport.get_report_size"><code class="docutils literal notranslate"><span class="pre">MpLabTransport.get_report_size()</span></code></a></li>
+<li><a class="reference internal" href="#pyedbglib.mplabtransport.mplabtransport.MpLabTransport.hid_read"><code class="docutils literal notranslate"><span class="pre">MpLabTransport.hid_read()</span></code></a></li>
+<li><a class="reference internal" href="#pyedbglib.mplabtransport.mplabtransport.MpLabTransport.hid_transfer"><code class="docutils literal notranslate"><span class="pre">MpLabTransport.hid_transfer()</span></code></a></li>
+<li><a class="reference internal" href="#pyedbglib.mplabtransport.mplabtransport.MpLabTransport.hid_write"><code class="docutils literal notranslate"><span class="pre">MpLabTransport.hid_write()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="pyedbglib.hidtransport.html"
+                          title="previous chapter">pyedbglib.hidtransport</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="pyedbglib.primitive.html"
+                          title="next chapter">pyedbglib.primitive</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pyedbglib.mplabtransport.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+        <div class="documentwrapper">
+            <div class="bodywrapper">
+                <div class="body" role="main">
+                    
+  <section id="pyedbglib-mplabtransport">
+<h1>pyedbglib.mplabtransport<a class="headerlink" href="#pyedbglib-mplabtransport" title="Permalink to this heading">¶</a></h1>
+<section id="module-pyedbglib.mplabtransport.mplabtransport">
+<span id="pyedbglib-mplabtransport-mplabtransport"></span><h2>pyedbglib.mplabtransport.mplabtransport<a class="headerlink" href="#module-pyedbglib.mplabtransport.mplabtransport" title="Permalink to this heading">¶</a></h2>
+<p>mplabtransport replaces the hidtransport layer when running pyedbglib stack inside MPLAB.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyedbglib.mplabtransport.mplabtransport.MpLabTransport">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyedbglib.mplabtransport.mplabtransport.</span></span><span class="sig-name descname"><span class="pre">MpLabTransport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyedbglib.mplabtransport.mplabtransport.MpLabTransport" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>MpLabTransport supports the same API as HidTransport:</p>
+<ul class="simple">
+<li><p>hid_transfer for send and receive</p></li>
+<li><p>get_report_size for determining the HID report size in use</p></li>
+</ul>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyedbglib.mplabtransport.mplabtransport.MpLabTransport.get_report_size">
+<span class="sig-name descname"><span class="pre">get_report_size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyedbglib.mplabtransport.mplabtransport.MpLabTransport.get_report_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Report size as reported through the HID interface.</p>
+<p>Usually 64b, but can be 512b</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyedbglib.mplabtransport.mplabtransport.MpLabTransport.hid_read">
+<span class="sig-name descname"><span class="pre">hid_read</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyedbglib.mplabtransport.mplabtransport.MpLabTransport.hid_read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Waits for and receives a packet over HID</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyedbglib.mplabtransport.mplabtransport.MpLabTransport.hid_transfer">
+<span class="sig-name descname"><span class="pre">hid_transfer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">packet</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyedbglib.mplabtransport.mplabtransport.MpLabTransport.hid_transfer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a packet and receives a response.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyedbglib.mplabtransport.mplabtransport.MpLabTransport.hid_write">
+<span class="sig-name descname"><span class="pre">hid_write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">packet</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyedbglib.mplabtransport.mplabtransport.MpLabTransport.hid_write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a packet to HID and does not wait for a response</p>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-pyedbglib.mplabtransport"></span></section>
+</section>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-wrapper">
+        <div class="footer" role="contentinfo">
+            © Copyright 2021, Microchip Technology Inc
+        </div>
+    </div>
+  </body>
+</html>

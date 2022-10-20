@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>pyedbglib.serialport &#8212; pyedbglib  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/microchip.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pyedbglib.util" href="pyedbglib.util.html" />
+    <link rel="prev" title="pyedbglib.protocols" href="pyedbglib.protocols.html" /> 
+  </head><body>
+    <header>
+        <div class="logo">
+            <a href="https://microchip.com" target="_blank">
+                <img src="_static/microchip.png" />
+            </a>
+        </div>
+    </header>
+
+    <div class="related-wrapper">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pyedbglib.util.html" title="pyedbglib.util"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pyedbglib.protocols.html" title="pyedbglib.protocols"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pyedbglib  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pyedbglib.html" accesskey="U">pyedbglib</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pyedbglib.serialport</a></li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="document">
+        
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">pyedbglib.serialport</a><ul>
+<li><a class="reference internal" href="#module-pyedbglib.serialport.serialcdc">pyedbglib.serialport.serialcdc</a><ul>
+<li><a class="reference internal" href="#pyedbglib.serialport.serialcdc.SerialCDC"><code class="docutils literal notranslate"><span class="pre">SerialCDC</span></code></a><ul>
+<li><a class="reference internal" href="#pyedbglib.serialport.serialcdc.SerialCDC.open"><code class="docutils literal notranslate"><span class="pre">SerialCDC.open()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-pyedbglib.serialport.serialportcheck">pyedbglib.serialport.serialportcheck</a><ul>
+<li><a class="reference internal" href="#pyedbglib.serialport.serialportcheck.check_access"><code class="docutils literal notranslate"><span class="pre">check_access()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-pyedbglib.serialport.serialportmap">pyedbglib.serialport.serialportmap</a><ul>
+<li><a class="reference internal" href="#pyedbglib.serialport.serialportmap.SerialPortMap"><code class="docutils literal notranslate"><span class="pre">SerialPortMap</span></code></a><ul>
+<li><a class="reference internal" href="#pyedbglib.serialport.serialportmap.SerialPortMap.find_hid_tool"><code class="docutils literal notranslate"><span class="pre">SerialPortMap.find_hid_tool()</span></code></a></li>
+<li><a class="reference internal" href="#pyedbglib.serialport.serialportmap.SerialPortMap.find_matching_tools_ports"><code class="docutils literal notranslate"><span class="pre">SerialPortMap.find_matching_tools_ports()</span></code></a></li>
+<li><a class="reference internal" href="#pyedbglib.serialport.serialportmap.SerialPortMap.find_serial_number"><code class="docutils literal notranslate"><span class="pre">SerialPortMap.find_serial_number()</span></code></a></li>
+<li><a class="reference internal" href="#pyedbglib.serialport.serialportmap.SerialPortMap.find_serial_port"><code class="docutils literal notranslate"><span class="pre">SerialPortMap.find_serial_port()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="pyedbglib.protocols.html"
+                          title="previous chapter">pyedbglib.protocols</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="pyedbglib.util.html"
+                          title="next chapter">pyedbglib.util</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pyedbglib.serialport.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+        <div class="documentwrapper">
+            <div class="bodywrapper">
+                <div class="body" role="main">
+                    
+  <section id="pyedbglib-serialport">
+<h1>pyedbglib.serialport<a class="headerlink" href="#pyedbglib-serialport" title="Permalink to this heading">¶</a></h1>
+<section id="module-pyedbglib.serialport.serialcdc">
+<span id="pyedbglib-serialport-serialcdc"></span><h2>pyedbglib.serialport.serialcdc<a class="headerlink" href="#module-pyedbglib.serialport.serialcdc" title="Permalink to this heading">¶</a></h2>
+<p>This subclass of pyserial’s serial.Serial class is intended to work exactly
+like the original, with the exception that the constructor has an extra argument
+‘open_timeout’ (default = 30). The open() method will do the specified number
+of retries to wait for a CDC serial port device to be created/accessible.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyedbglib.serialport.serialcdc.SerialCDC">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyedbglib.serialport.serialcdc.</span></span><span class="sig-name descname"><span class="pre">SerialCDC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyedbglib.serialport.serialcdc.SerialCDC" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Serial</span></code></p>
+<p>Serial class extension supporting open_timeout</p>
+<p>Desired definition is
+def __init__(self, *args, open_timeout=30, **kwargs):
+but that doesn’t work with python2.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyedbglib.serialport.serialcdc.SerialCDC.open">
+<span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyedbglib.serialport.serialcdc.SerialCDC.open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overriding parent’s open(), with timeout.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pyedbglib.serialport.serialportcheck">
+<span id="pyedbglib-serialport-serialportcheck"></span><h2>pyedbglib.serialport.serialportcheck<a class="headerlink" href="#module-pyedbglib.serialport.serialportcheck" title="Permalink to this heading">¶</a></h2>
+<p>Utility for checking whether a (virtual) serial port is accessible or not.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyedbglib.serialport.serialportcheck.check_access">
+<span class="sig-prename descclassname"><span class="pre">pyedbglib.serialport.serialportcheck.</span></span><span class="sig-name descname"><span class="pre">check_access</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyedbglib.serialport.serialportcheck.check_access" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if user has access to kit’s virtual serial port.
+In many Linux distros access requires membership of the ‘dialout’ group which is not default.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>port</strong> – port name to check</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>boolean - access is allowed</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-pyedbglib.serialport.serialportmap">
+<span id="pyedbglib-serialport-serialportmap"></span><h2>pyedbglib.serialport.serialportmap<a class="headerlink" href="#module-pyedbglib.serialport.serialportmap" title="Permalink to this heading">¶</a></h2>
+<p>Serial Port Mapper
+Kits like Curiosity Nano consist of a composite USB device with multiple interfaces, including
+a virtual serial port.  The USB serial number belongs on a device level.  This utility offers a
+mechanism for linking the virtual serial port to its parent USB device.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyedbglib.serialport.serialportmap.SerialPortMap">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyedbglib.serialport.serialportmap.</span></span><span class="sig-name descname"><span class="pre">SerialPortMap</span></span><a class="headerlink" href="#pyedbglib.serialport.serialportmap.SerialPortMap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This is a utility to find virtual serial port name based on HID device serial number,
+or vice versa.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyedbglib.serialport.serialportmap.SerialPortMap.find_hid_tool">
+<span class="sig-name descname"><span class="pre">find_hid_tool</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyedbglib.serialport.serialportmap.SerialPortMap.find_hid_tool" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find HID tool based on virtual serial port name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>port</strong> – port name to find</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>HID tool object or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyedbglib.serialport.serialportmap.SerialPortMap.find_matching_tools_ports">
+<span class="sig-name descname"><span class="pre">find_matching_tools_ports</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">serial_endswith</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyedbglib.serialport.serialportmap.SerialPortMap.find_matching_tools_ports" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find tools and ports matching (partial) serial number.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>serial_endswith</strong> – serial number, or at least end part thereof</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of matching {tool, port} dicts</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyedbglib.serialport.serialportmap.SerialPortMap.find_serial_number">
+<span class="sig-name descname"><span class="pre">find_serial_number</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyedbglib.serialport.serialportmap.SerialPortMap.find_serial_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find HID tool serial number based on virtual serial port name
+This is redundant, but added for convenience</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>port</strong> – port name</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>HID tool serial number or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyedbglib.serialport.serialportmap.SerialPortMap.find_serial_port">
+<span class="sig-name descname"><span class="pre">find_serial_port</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">serial_number</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyedbglib.serialport.serialportmap.SerialPortMap.find_serial_port" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find virtual serial port based on serial number exact match</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>serial_number</strong> – serial number of tool</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Name of virtual serial port or None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-pyedbglib.serialport"></span></section>
+</section>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-wrapper">
+        <div class="footer" role="contentinfo">
+            © Copyright 2021, Microchip Technology Inc
+        </div>
+    </div>
+  </body>
+</html>
