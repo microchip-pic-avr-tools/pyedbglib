@@ -103,6 +103,9 @@ class AvrIspProtocol(Jtagice3Protocol):
         if not resp[0] == cmd[0]:
             raise AvrIspProtocolError("AVRISP protocol: Invalid response received")
         if not resp[1] == AvrIspProtocol.SPI_STATUS_CMD_OK:
+            # Clock error means that the tool managed to gain access at a lower clock setting
+            if resp[1] == AvrIspProtocol.SPI_STATUS_CLOCK_ERROR:
+                raise AvrIspProtocolError("AVRISP clock error - lower your clock frequency and try again")
             raise AvrIspProtocolError("AVRISP protocol: Command failed")
         return resp[2:]
 

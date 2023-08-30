@@ -1,5 +1,10 @@
 # Changelog
 
+## [2.23.0] - September 2023
+
+### Added
+- DSG-6057 Added support for Boot Row memory type
+
 ## [2.22.0] - October 2022
 
 ### Changed
@@ -12,7 +17,7 @@
 
 ## [2.20.3] - May 2022
 
-### Added 
+### Added
 - DSG-3994 Added more ATmega328P AVR ISP protocol commands (beta)
 - DSG-4533 Added TPI protocol (alpha) for test purposes
 - DSG-3934 Added PID for EDBG in mass-storage mode

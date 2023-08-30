@@ -4,4 +4,4 @@ cython<0.29.8;python_version<="2.7"
 cython;python_version>="3"
 hidapi;python_version>="3"
 hidapi==0.7.99.post21;python_version<="2.7"
-pyserial>=3.5*
+pyserial>=3.5

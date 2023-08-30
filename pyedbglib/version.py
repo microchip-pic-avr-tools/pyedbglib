@@ -1,4 +1,4 @@
 """ This file was generated when pyedbglib was built """
-VERSION = '2.22.0.7'
-COMMIT_ID = '3896af1c099ee1ac85024081500caa97484bfe01'
-BUILD_DATE = '2022-10-20 07:45:06 +0000'
+VERSION = '2.23.0.14'
+COMMIT_ID = 'N/A'
+BUILD_DATE = '2023-08-29 11:09:04 +0000'

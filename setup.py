@@ -37,11 +37,11 @@ in case of installing from source, a Local Version Identifier (see PEP 440) is a
 # Package version setup
 PACKAGE_VERSION = {
     "major": 2,
-    "minor": 22,
+    "minor": 23,
     "patch": 0,
     # Will be replaced by build number from Jenkins. For local builds the build number is 0 and the 'snapshot' is
     # added as Local Version Identifier
-    "build": '7',
+    "build": '14',
 }
 
 version = "{}.{}.{}.{}".format(PACKAGE_VERSION['major'],
@@ -106,7 +106,7 @@ setup(
     # List of packages required to develop and test this package
     #   $ pip install pyedbglib[dev]
     extras_require={
-        'dev': ['pylint', 'pytest', 'mock'],
+        'dev': ['pylint>=2.15', 'pytest', 'mock'],
     },
 
     # Include files from MANIFEST.in

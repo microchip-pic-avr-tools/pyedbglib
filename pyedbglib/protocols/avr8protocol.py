@@ -205,6 +205,7 @@ class Avr8Protocol(Jtagice3Protocol):
     AVR8_MEMTYPE_EEPROM_ATOMIC = 0xC4  # Auto-erased EEPROM
     AVR8_MEMTYPE_USER_SIGNATURE = 0xC5  # User signature row access
     AVR8_MEMTYPE_CALIBRATION_SIGNATURE = 0xC6  # Calibration row access
+    AVR8_MEMTYPE_BOOT_ROW = 0xC8  # Boot row row access
     AVR8_MEMTYPE_CS = 0xD0  # PDI/UPDI Control/Status space. Note: UPDI only!
     AVR8_MEMTYPE_OCD = 0xD1  # On-chip debug memory. Note: UPDI only!
     AVR8_MEMTYPE_SIB = 0xD3  # UPDI System Information Block access
