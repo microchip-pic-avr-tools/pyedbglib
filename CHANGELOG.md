@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.24.2] - March 2024
+
+### Added
+- DSG-7090 Added support for converting Intel(R) Hex to UF2 format
+
+### Changed
+- DSG-6539 Migrated pyedbglib to new project configuration format
+
 ## [2.23.0] - September 2023
 
 ### Added

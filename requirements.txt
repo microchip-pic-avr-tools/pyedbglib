@@ -1,7 +1,0 @@
-# To ensure there exists a wheel for win32/py27
-cython<0.29.8;python_version<="2.7"
-# No requirements going forward
-cython;python_version>="3"
-hidapi;python_version>="3"
-hidapi==0.7.99.post21;python_version<="2.7"
-pyserial>=3.5

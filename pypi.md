@@ -11,7 +11,6 @@ pyedbglib is available:
 * install using pip from pypi: https://pypi.org/project/pyedbglib
 * browse source code on github: https://github.com/microchip-pic-avr-tools/pyedbglib
 * read API documentation on github: https://microchip-pic-avr-tools.github.io/pyedbglib
-* read the changelog on github: https://github.com/microchip-pic-avr-tools/pyedbglib/blob/main/CHANGELOG.md
 
 ## Usage
 pyedbglib is a library which can be used by Python applications to communicate with Microchip microcontrollers via Microchip CMSIS-DAP based debuggers.
@@ -38,7 +37,7 @@ Example usage of pyedbglib to read debugger firmware version and target voltage
 """
 from pyedbglib.hidtransport.hidtransportfactory import hid_transport
 from pyedbglib.protocols.housekeepingprotocol import Jtagice3HousekeepingProtocol
-from pyedbglib.version import VERSION as pyedbglib_version
+from pyedbglib import __version__ as pyedbglib_version
 
 # Report library version
 print("pyedbglib version {}".format(pyedbglib_version))
