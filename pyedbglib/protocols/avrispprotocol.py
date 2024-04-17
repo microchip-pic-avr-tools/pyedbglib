@@ -264,7 +264,7 @@ class AvrIspProtocol(Jtagice3Protocol):
         command.extend(data)
         self._spi_cmd_resp(command)
 
-    def write_flash_page(self, byte_address, data):
+    def write_flash_page(self, byte_address, data, delay_ms = 5):
         """
         Writes a page of flash
 
@@ -277,8 +277,8 @@ class AvrIspProtocol(Jtagice3Protocol):
             self.load_address(byte_address >> 1)
         command = bytearray([AvrIspProtocol.SPI_CMD_PROGRAM_FLASH])
         command.extend(binary.pack_be16(len(data)))
-        command.extend([0x81])  # Page mode
-        command.extend([0])  # Not used
+        command.extend([0x91])  # Write page with timed delay
+        command.extend([delay_ms])
         command.extend([AvrIspProtocol.AVR_LOAD_PAGE_COMMAND])
         command.extend([AvrIspProtocol.AVR_WRITE_PAGE_COMMAND])
         command.extend([0])  # Not used
